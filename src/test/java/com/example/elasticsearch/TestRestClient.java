@@ -31,7 +31,7 @@ public class TestRestClient {
 
     @Test
     public void test() throws IOException {
-        DeleteRequest deleteRequest = new DeleteRequest("ems","emp","1");
+        DeleteRequest deleteRequest = new DeleteRequest("ems","12");
         DeleteResponse deleteResponse = restHighLevelClient.delete(deleteRequest, RequestOptions.DEFAULT);
         System.out.println(deleteResponse.status());
     }
@@ -54,7 +54,7 @@ public class TestRestClient {
                 .sort("age", SortOrder.DESC)
                 .highlighter(new HighlightBuilder().field("*").requireFieldMatch(false));
 
-        searchRequest.types("emp").source(searchSourceBuilder);
+        searchRequest.source(searchSourceBuilder);
         SearchResponse searchResponse = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
         System.out.println("matched result: " +searchResponse.status());
         System.out.println("Document points: "+searchResponse.getHits().getMaxScore());
