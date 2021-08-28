@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ESRepository extends ElasticsearchRepository<Emp,String> {
+public interface ESRepository extends ElasticsearchRepository<Emp, String> {
 
-    Page<Emp> search(QueryBuilder var1, Pageable var2);
+//    Page<Emp> search(QueryBuilder var1, Pageable var2);
 }
