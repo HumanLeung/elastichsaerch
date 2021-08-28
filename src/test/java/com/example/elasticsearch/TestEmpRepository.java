@@ -3,9 +3,12 @@ package com.example.elasticsearch;
 import com.example.elasticsearch.entity.Emp;
 import com.example.elasticsearch.repository.ESRepository;
 import org.assertj.core.internal.bytebuddy.dynamic.scaffold.MethodGraph;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import java.util.Date;
@@ -48,6 +51,9 @@ public class TestEmpRepository {
     public void testFindAll(){
         Iterable<Emp> all = esRepository.findAll(Sort.by(Sort.Order.desc("age")));
         all.forEach(System.out::println);
+    }
+    @Test
+    public void testFindPage(){
     }
 
 }
