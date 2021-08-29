@@ -36,8 +36,6 @@ public class TestEmpRepository {
     @Autowired
     private ESRepository esRepository;
 
-    @Autowired
-    private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
     @Qualifier("elasticsearchClient")
     @Autowired
