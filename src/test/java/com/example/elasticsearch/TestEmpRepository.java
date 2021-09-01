@@ -77,9 +77,9 @@ public class TestEmpRepository {
     @Test
     public void testFindPage() throws IOException, ParseException {
         List<Emp> empList = new ArrayList<>();
-        SearchRequest searchRequest = new SearchRequest("ems");
+        SearchRequest searchRequest = new SearchRequest("student");
         SearchSourceBuilder searchRequestBuilder = new SearchSourceBuilder();
-        searchRequestBuilder.query(QueryBuilders.termQuery("content","自"))
+        searchRequestBuilder.query(QueryBuilders.termQuery("id","John"))
                 .sort("age", SortOrder.DESC)
                 .from(0)
                 .size(20)
